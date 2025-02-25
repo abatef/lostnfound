@@ -78,7 +78,7 @@ public class ItemService {
         if (item.getCreatedBy().getId().equals(user.getId())) {
             itemRepository.delete(item);
         }
-        throw new NotOwnedItemException("user tried to delete an item that is not owned by the user");
+        throw new NotOwnedItemException("you don't own this item");
     }
 
     public List<ItemInfo> getMyAllItems(User user) {
